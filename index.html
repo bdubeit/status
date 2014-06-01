@@ -1,0 +1,32 @@
+---
+layout: main
+title: BDube IT System Status
+---
+
+<div class="page-header">
+  <h1>Notifications</h1>
+</div>
+
+{% if site.data.notifications | size > 0 %}
+<ul>
+{% for notification in site.data.notifications %}
+<li>{{ notification.description }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>There are no notifications at this time.</p>
+{% endif %}
+
+<div class="page-header">
+  <h1>Scheduled Maintenance</h1>
+</div>
+
+{% if site.data.jobs | size > 0 %}
+<ul>
+  {% for job in site.data.jobs %}
+  <li>{{ job.description }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>There are no scheduled jobs at this time.</p>
+{% endif %}
